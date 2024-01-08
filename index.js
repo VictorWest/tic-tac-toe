@@ -4,6 +4,7 @@ let fighterO = document.querySelector(".fighter-O")
 let header = document.querySelector(".header")
 let container = document.querySelector(".container")
 let undo = document.querySelector(".undo")
+let restart = document.querySelector(".restart")
 let switchPlayers = document.querySelector(".switch")
 let playerOne = ""
 
@@ -21,8 +22,10 @@ fighterO.addEventListener("click", () => {
 let clicked
 cell.forEach((element) => {
     element.addEventListener(("click"), () => {
-        element.textContent = playerOne
-        clicked = element.classList[1]
+        if(element.textContent == ".."){
+            element.textContent = playerOne
+            clicked = element.classList[1]
+        }
     })
 })
 
@@ -36,4 +39,8 @@ switchPlayers.addEventListener("click", () => {
 
 undo.addEventListener("click", () => {
     document.querySelector(`.${clicked}`).textContent = ".."
+})
+
+restart.addEventListener("click", () => {
+    location.reload()
 })

@@ -90,4 +90,6 @@ button:hover{
     display: flex;
     gap: 1rem;
     padding-top: 1rem;
+    position: relative;
+    right: 1.5rem;
 }
