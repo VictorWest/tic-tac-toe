@@ -1,3 +1,4 @@
+let body = document.querySelector("body")
 let cell = document.querySelectorAll(".cell")
 let fighterX = document.querySelector(".fighter-X")
 let fighterO = document.querySelector(".fighter-O")
@@ -6,6 +7,8 @@ let container = document.querySelector(".container")
 let undo = document.querySelector(".undo")
 let restart = document.querySelector(".restart")
 let switchPlayers = document.querySelector(".switch")
+let darkTheme = document.querySelector(".dark")
+let lightTheme = document.querySelector(".light")
 let playerOne = ""
 
 fighterX.addEventListener("click", () => {
@@ -43,4 +46,16 @@ undo.addEventListener("click", () => {
 
 restart.addEventListener("click", () => {
     location.reload()
+})
+
+darkTheme.addEventListener("click", () => {
+    body.style.backgroundColor = "black"
+    darkTheme.style.display = "none"
+    lightTheme.style.display = "block"
+})
+
+lightTheme.addEventListener("click", () => {
+    body.style.backgroundColor = "#008080"
+    lightTheme.style.display = "none"
+    darkTheme.style.display = "block"
 })
